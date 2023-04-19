@@ -12,7 +12,7 @@
       <button @click="cancelEditing">Cancel</button>
     </div>
     <div v-else>
-      <input type="checkbox" :checked="localTodo.selected" @change="$emit('toggle-selected', localTodo)" />
+      <input type="checkbox" :checked="todo.selected" @change="$emit('toggleSelected', todo)" />
       <span>{{ localTodo.title }}</span>
       <span>{{ localTodo.estimatedHours }} heures</span>
       <span>{{ responsibleName }}</span>

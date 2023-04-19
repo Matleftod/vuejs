@@ -4,6 +4,7 @@
         v-for="todo in filteredTodos"
         :key="todo.id"
         :todo="todo"
+        @toggleSelected="toggleSelected(todo)"
         @delete="deleteTodo(todo.id)"
         @edit="editTodo"
       ></todo-item>
