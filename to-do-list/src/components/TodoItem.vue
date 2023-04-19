@@ -17,7 +17,7 @@
       <span>{{ localTodo.estimatedHours }} heures</span>
       <span>{{ responsibleName }}</span>
       <button @click="startEditing">Edit</button>
-      <button @click="$emit('delete', localTodo)">Delete</button>
+      <button @click="$emit('delete', todo)">Delete</button>
     </div>
   </div>
 </template>

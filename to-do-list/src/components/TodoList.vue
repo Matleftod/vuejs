@@ -4,12 +4,11 @@
         v-for="todo in filteredTodos"
         :key="todo.id"
         :todo="todo"
-        @delete="deleteTodo"
+        @delete="deleteTodo(todo.id)"
         @edit="editTodo"
       ></todo-item>
     </div>
- </template>
-  
+</template>  
 <script>
 import TodoItem from './TodoItem.vue';
 import { mapActions, mapGetters } from 'vuex';
