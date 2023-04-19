@@ -8,24 +8,24 @@
         @edit="editTodo"
       ></todo-item>
     </div>
-</template>
+ </template>
   
 <script>
 import TodoItem from './TodoItem.vue';
 import { mapActions, mapGetters } from 'vuex';
 
 export default {
-    components: {
-        TodoItem,
+  components: {
+    TodoItem,
+  },
+  computed: {
+    ...mapGetters(['filteredTodos']),
+  },
+  methods: {
+    ...mapActions(['deleteTodo', 'editTodo']),
+    toggleSelected(todo) {
+      this.$store.dispatch('toggleSelected', todo);
     },
-    computed: {
-        ...mapGetters(['filteredTodos']),
-    },
-    methods: {
-        ...mapActions(['deleteTodo', 'editTodo']),
-        toggleSelected(todo) {
-        this.$store.dispatch('toggleSelected', todo);
-        },
-    },
+  },
 };
 </script>  
