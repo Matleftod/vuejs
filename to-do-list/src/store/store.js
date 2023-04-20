@@ -10,10 +10,13 @@ const store = createStore({
         { id: 4, name: 'Julie' },
     ],
     filter: 'all',
+    nextTodoId: 1,
   },
   mutations: {
     ADD_TODO(state, todo) {
-      state.todos.push(todo);
+      const newTodo = { ...todo, id: state.nextTodoId, selected: false };
+      state.todos.push(newTodo);
+      state.nextTodoId++;
     },
     UPDATE_TODO(state, updatedTodo) {
         const index = state.todos.findIndex((todo) => todo.id === updatedTodo.id);
